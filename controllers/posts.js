@@ -85,6 +85,7 @@ exports.getPosts = (req, res, next) => { // All post GET request
   })
   .catch(error => {
     res.status(500).json({
+      originalError: error,
       message: "Fetching posts failed!"
     });
   });
