@@ -9,9 +9,11 @@ const userRoutes = require("./routes/user")
 mongoose.connect("mongodb+srv://ryuji:" + process.env.MONGO_ATLAS_PW + "@cluster0.opz9d.mongodb.net/MEANStackLearning?retryWrites=true&w=majority")
 .then(() => {
   console.log('Connected to Database');
+  console.log("Ryuji Process Env MONGO_ATLAS_PW=" + process.env.MONGO_ATLAS_PW);
 })
 .catch(() => {
   console.log('Connection Failed');
+  console.log("Ryuji Process Env MONGO_ATLAS_PW=" + process.env.MONGO_ATLAS_PW);
 })
 
 const app = express();
