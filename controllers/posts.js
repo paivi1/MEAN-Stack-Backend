@@ -2,6 +2,7 @@ const Post = require('../models/post');
 
 
 exports.createPost = (req, res, next) => {
+  console.log(req);
   const url = req.protocol + '://' + req.get("host"); // Get the server address to construct our image path
   const post = new Post({
     title: req.body.title,
