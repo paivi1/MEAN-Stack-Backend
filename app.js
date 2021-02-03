@@ -25,12 +25,13 @@ app.use(bodyParser.urlencoded({ extended: false })); // parse urlencoded data
 app.use("/images", express.static(path.join("images"))); // requests targetting '/images' will be routed to 'backend/images'. Once again, path is relative to 'server.js'
 
 app.use((req, res, next) => {
+  console.log(req);
   res.setHeader('Access-Control-Allow-Origin', "*");
   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization"); // Note: Adding our created 'authorization' header capitalized as it is case insensitive
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT,  DELETE, OPTIONS")
   next();
 })
-console.log(req);
+
 
 app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
